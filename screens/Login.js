@@ -16,7 +16,7 @@ export default class Login extends React.Component{
         return (
             <ScrollView style={style.container}>
                 <Image source={require('../assets/images/logo.png')}
-                  resizeMode="cover"
+                  resizeMode="stretch"
                  style={{width:width,height:height/2, marginBottom:15}}  
                  />
                
