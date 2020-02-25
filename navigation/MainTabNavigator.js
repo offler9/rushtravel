@@ -2,10 +2,12 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
+import Icon from 'react-native-vector-icons/AntDesign';
+import Colors from '../constants/Colors';
 import TabBarIcon from '../components/TabBarIcon';
 
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/Home';
+import OrderScreen from '../screens/Order';
 import SettingsScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
@@ -22,10 +24,10 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarOptions: {
-    activeTintColor: '#ccbc58',
-    inactiveTintColor: 'grey',
-    inactiveBackgroundColor: '#2e2d2d',
-    activeBackgroundColor: '#2e2d2d',
+    activeTintColor: 'rgba(0,0,0,0.7)',
+    inactiveTintColor: 'rgba(0,0,0,0.5)',
+    inactiveBackgroundColor: '#f3f44e',
+    activeBackgroundColor: '#f3f44e',
   },
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
@@ -40,6 +42,34 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
+const OrderStack = createStackNavigator(
+  {
+    Order: OrderScreen,
+  },
+  config
+);
+
+OrderStack.navigationOptions = {
+  tabBarOptions: {
+    activeTintColor: 'rgba(0,0,0,0.7)',
+    inactiveTintColor: 'rgba(0,0,0,0.5)',
+    inactiveBackgroundColor: '#f3f44e',
+    activeBackgroundColor: '#f3f44e',
+  },
+  tabBarLabel: 'Order',
+  tabBarIcon: ({ focused }) => (
+    <Icon
+      name={'plussquareo'}
+      size={26}
+      style={{ marginBottom: -3 }}
+      color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+    />
+  ),
+};
+
+OrderStack.path = '';
+
+
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
@@ -49,15 +79,15 @@ const SettingsStack = createStackNavigator(
 
 SettingsStack.navigationOptions = {
   tabBarOptions: {
-    activeTintColor: '#ccbc58',
-    inactiveTintColor: 'grey',
-    inactiveBackgroundColor: '#2e2d2d',
-    activeBackgroundColor: '#2e2d2d',
+    activeTintColor: 'rgba(0,0,0,0.7)',
+    inactiveTintColor: 'rgba(0,0,0,0.5)',
+    inactiveBackgroundColor: '#f3f44e',
+    activeBackgroundColor: '#f3f44e',
   },
   tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} 
-    name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    name={Platform.OS === 'ios' ? 'ios-list' : 'md-list'}
      />
   ),
 };
@@ -66,6 +96,7 @@ SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
+  OrderStack,
   SettingsStack,
 });
 

@@ -16,8 +16,8 @@ export default class Login extends React.Component{
         return (
             <ScrollView style={style.container}>
                 <Image source={require('../assets/images/logo.png')}
-                  resizeMode="stretch"
-                 style={{width:width,height:height/2, marginBottom:10}}  
+                  resizeMode="cover"
+                 style={{width:width,height:height/2, marginBottom:15}}  
                  />
                
                 <KeyboardAvoidingView style={style.container} enabled>
@@ -38,7 +38,7 @@ export default class Login extends React.Component{
                     <Text style={style.signupButton}> Sign Up</Text>
                 </TouchableOpacity>
                 </View>
-                <Button 
+                <Button onPress={()=> this.props.navigation.navigate('Home')}
                 style={
                     {backgroundColor:"rgba(240, 240, 50,1)", 
                     width:width/3, 

@@ -142,9 +142,9 @@ export default class HomeScreen extends React.Component {
   }
 }
 
-HomeScreen.navigationOptions = {
-  title: 'Home',
-};
+// HomeScreen.navigationOptions = {
+//   title: 'Home',
+// };
 
 const styles = StyleSheet.create({
   container: {
