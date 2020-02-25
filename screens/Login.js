@@ -34,7 +34,7 @@ export default class Login extends React.Component{
                 />
                 <View style={style.signupTextCont}>
                 <Text style={style.signupText}>Don't have an account yet?</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>this.props.navigation.navigate("Signup")}>
                     <Text style={style.signupButton}> Sign Up</Text>
                 </TouchableOpacity>
                 </View>
@@ -52,7 +52,7 @@ export default class Login extends React.Component{
         )
     }
 }
-// ./node_modules/.bin/react-native run-android
+
 const style = StyleSheet.create({
     container:{
         flex: 1,
