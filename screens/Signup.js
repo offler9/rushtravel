@@ -46,7 +46,7 @@ export default class Signup extends React.Component{
                     <Text style={style.signupButton}> Login </Text>
                 </TouchableOpacity>
                 </View>
-                <Button 
+                <Button onPress={()=> this.props.navigation.navigate('Login')}
                 style={
                     {backgroundColor:"rgba(240, 240, 50,1)", 
                     width:width/3, 

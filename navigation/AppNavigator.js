@@ -8,6 +8,11 @@ import MainTabNavigator from './MainTabNavigator';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import DrawerScreen from '../screens/Drawer';
+import About from '../screens/About';
+import Changepassword from '../screens/Changepassword';
+import Editprofile from '../screens/Editprofile';
+import Search from '../screens/Search';
+import HomeOrder from '../screens/HomeOrder';
 
 let headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -52,5 +57,35 @@ export default createAppContainer(
         header: null
       }
     },
+    About:{
+      screen:About,
+      navigationOptions:{
+        header: null
+      }
+    },
+    Changepassword:{
+      screen:Changepassword,
+      navigationOptions:{
+        header: null
+      }
+    },
+    Editprofile:{
+      screen:Editprofile,
+      navigationOptions:{
+        header: null
+      }
+    },
+    Search:{
+      screen:Search,
+      navigationOptions:{
+        header: null
+      }
+    },
+    HomeOrder:{
+      screen:HomeOrder,
+      navigationOptions:{
+        header: null
+      }
+    }
   })
 );

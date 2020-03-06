@@ -7,7 +7,7 @@ export default class Drawer extends React.Component{
         return(
             <View>
                 <View style={style.backContext}>
-                    <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between'}} onPress={()=> this.props.navigation.navigate("Back")}>
+                    <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between'}} onPress={()=> this.props.navigation.navigate("Home")}>
                     <Text style={style.backButton}> Back </Text>
                     <IconButton style={{alignSelf:'center'}} icon={Platform.OS === "android" ? "arrow-right" : "ios-arrow-forward"}/>
                     </TouchableOpacity>
@@ -20,19 +20,19 @@ export default class Drawer extends React.Component{
                 </View>
 
                 <View style={style.drawerTextCont}>
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Edit Profile")}>
+                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Editprofile")}>
                     <Text style={style.drawerButton}> Edit Profile </Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={style.drawerTextCont}>
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Change Password")}>
+                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Changepassword")}>
                     <Text style={style.drawerButton}> Change Password </Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={style.logoutTextCont}>
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Logout")}>
+                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Login")}>
                     <Text style={style.logoutButton}> Logout </Text>
                     </TouchableOpacity>
                 </View>
